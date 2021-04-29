@@ -83,7 +83,8 @@ const Login = () => {
             {
                 ({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting, handleClick }) => {
                     return (
-                        <div className="Login">
+                        <div className={"Login",'wrapper'} >
+                            <div className='form-wrapper'>
 
                             <h1>LOGIN PAGE</h1><br />
                             <Form onSubmit={handleSubmit} style={{ border: "outline 5px black" }}>
@@ -96,7 +97,7 @@ const Login = () => {
                                         variant="outlined"
                                         onChange={(e) => setUsername(e.target.value)} />
                                 </Form.Group>
-                                <br />
+                                <br /><br /><br /><br />
                                 <Form.Group size="lg" controlId="password">
                                     <TextField
                                         
@@ -122,9 +123,10 @@ const Login = () => {
                                         }
                                         } />
                                 </Form.Group>
-                                <br />
-                                <CustomBtn type="submit" label="login" onClick={redirect} disabled={isSubmitting} />
+                                <br /><br /><br /><br />
+                                <CustomBtn className='button'type="submit" label="login" onClick={redirect} disabled={isSubmitting} />
                             </Form>
+                            </div>
                         </div>
 
                     )
