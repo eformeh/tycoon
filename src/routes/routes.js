@@ -1,5 +1,6 @@
 import Login from "../pages/login/login";
-import Dashboard from "../pages/dashboard/dashboard";
+import AdminDashboard from "../pages/dashboard/AdminDashboard";
+import UserDashboard from "../pages/dashboard/UserDashboard";
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,8 +13,11 @@ const Routes = () => {
             <Route exact path="/">
                 <Login />
             </Route>
-            <Route exact path="/dashboard">
-                <Dashboard />
+            <Route exact path="/admindashboard">
+                <AdminDashboard />
+            </Route>
+            <Route exact path="/userdashboard">
+                <UserDashboard />
             </Route>
         </Switch>
     </Router>

@@ -6,6 +6,7 @@ import { Formik } from 'formik';
 import {
     useHistory
 } from "react-router-dom";
+// import Redirect from "../../components/login/redirect"
 // importing material-ui library into the login component
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -14,15 +15,6 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from '@material-ui/core/IconButton';
 import TextField from '@material-ui/core/TextField';
 import * as Yup from "yup";
-// styling the login container usin maketyles from material-ui
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& .MuiTextField-root': {
-            margin: theme.spacing(1),
-            width: 200,
-        },
-    },
-}));
 
 const Login = () => {
     // her the username password can be stored using the declared arguments
@@ -58,12 +50,35 @@ const Login = () => {
     }
     // this function redirects the system to dashboard
     const history = useHistory();
+
     const redirect = () => {
-      history.push("/dashboard")
-        alert("you have submitted")
+        const validatedAdmin = { username: 'Admin', password: 'admin' };
+        const User1 = { username: 'oyievesho@icloud.com', password: 'wisdom123' };
+        const User2 = { username: 'sunday.Oladiran@thepfs.biz', password: 'Oladiran' };
+        
+        console.log('values => ', username, password)
+        if (username === User1.username && password === User1.password) {
+            history.push("/userdashboard")
+            alert("you are user");
+            console.log('values => ', username, password)
+        } else if (username === validatedAdmin.username && password === validatedAdmin.password) {
+            history.push("/admindashboard")
+            alert("you are admin");
+            console.log('values => ', username, password)
+        }
+        else if (username === User2.username && password === User2.password) {
+            history.push("/admindashboard")
+            alert("you are admin");
+            console.log('values => ', username, password)
+        }
+        else {
+            alert('Wrong username OR password');
+
+        }
+
 
     }
-        
+
     return (
         // formik handles all the constarints on the form 
         <Formik
@@ -83,49 +98,54 @@ const Login = () => {
             {
                 ({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting, handleClick }) => {
                     return (
-                        <div className={"Login",'wrapper'} >
+
+                        <div className={"Login", 'wrapper'} >
                             <div className='form-wrapper'>
 
-                            <h1>LOGIN PAGE</h1><br />
-                            <Form onSubmit={handleSubmit} style={{ border: "outline 5px black" }}>
-                                <Form.Group size="lg" controlId="email">
-                                    <TextField
-                                        error={errors.username && touched.username}
-                                        id="outlined-basic"
-                                        label="Username"
-                                        style={{ width: "272px" }}
-                                        variant="outlined"
-                                        onChange={(e) => setUsername(e.target.value)} />
-                                </Form.Group>
-                                <br /><br /><br /><br />
-                                <Form.Group size="lg" controlId="password">
-                                    <TextField
-                                        
-                                        error={errors.password && touched.password && "error"}
-                                        id="outlined-basic"
-                                        type={showPassword ? "text" : "password"}
-                                        label="Password"
-                                        style={{ width: "272px" }}
-                                        variant="outlined"
-                                        onChange={(e) => setPassword(e.target.value)}
+                                <h1>LOGIN PAGE</h1><br />
+                                <Form onSubmit={handleSubmit} style={{ border: "outline 5px black" }}>
+                                    <Form.Group size="lg" controlId="email">
+                                        <TextField
+                                            error={errors.username && touched.username}
+                                            id="outlined-basic"
+                                            label="Username"
+                                            style={{ width: "272px" }}
+                                            variant="outlined"
+                                            onChange={(e) => {
+                                                setUsername(e.target.value)
+                                            }} />
+                                    </Form.Group>
+                                    <br /><br /><br /><br />
+                                    <Form.Group size="lg" controlId="password">
+                                        <TextField
 
-                                        InputProps={{
-                                            endAdornment: (<InputAdornment position="end">
-                                                <IconButton
-                                                    aria-label="toggle password visibility"
-                                                    onClick={handleClickShowPassword}
-                                                    onMouseDown={handleMouseDownPassword}
-                                                    edge="end"
-                                                >
-                                                    {showPassword ? <Visibility /> : <VisibilityOff />}
-                                                </IconButton>
-                                            </InputAdornment>)
-                                        }
-                                        } />
-                                </Form.Group>
-                                <br /><br /><br /><br />
-                                <CustomBtn className='button'type="submit" label="login" onClick={redirect} disabled={isSubmitting} />
-                            </Form>
+                                            error={errors.password && touched.password && "error"}
+                                            id="outlined-basic"
+                                            type={showPassword ? "text" : "password"}
+                                            label="Password"
+                                            style={{ width: "272px" }}
+                                            variant="outlined"
+                                            onChange={(e) => {
+                                                setPassword(e.target.value)
+                                            }}
+
+                                            InputProps={{
+                                                endAdornment: (<InputAdornment position="end">
+                                                    <IconButton
+                                                        aria-label="toggle password visibility"
+                                                        onClick={handleClickShowPassword}
+                                                        onMouseDown={handleMouseDownPassword}
+                                                        edge="end"
+                                                    >
+                                                        {showPassword ? <Visibility /> : <VisibilityOff />}
+                                                    </IconButton>
+                                                </InputAdornment>)
+                                            }
+                                            } />
+                                    </Form.Group>
+                                    <br /><br /><br /><br />
+                                    <CustomBtn className='button' type="submit" label="login" onClick={redirect} disabled={isSubmitting} />
+                                </Form>
                             </div>
                         </div>
 
