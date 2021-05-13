@@ -1,41 +1,26 @@
 import React from 'react'
-import { Admin, Resource} from 'react-admin';
+import { Admin, Resource } from 'react-admin';
 //import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, DateInput, theme } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
-//import authProvider from '../login/authProvider';
-import { UserList,UserEdit,UserCreate } from "../../components/dashboard/user";
-
+import authProvider from '../login/authProvider';
+import Login from '../login/login';
+import { UserList, UserEdit, UserCreate } from "../../components/dashboard/user";
+import Theme from "../../components/dashboard/theme";
 const AdminDashboard = () => <Admin
-//authProvider={authProvider}
+    AuthProvider={authProvider}
+    //  loginPage={Login}
     dataProvider={jsonServerProvider(
-        'https://my-json-server.typicode.com/eformeh/myjsonserver'
-  
+        'https://my-json-server.typicode.com/eformeh/myjsonserver',
+        // 'https://my-json-server.typicode.com/eformeh/customerstatement'
     )
     }
-    theme="dark"
+    theme={Theme}
+
 >
     <Resource name="user"
         list={UserList}
         edit={UserEdit}
         create={UserCreate} />
+    <Resource name="account statement"/>
 </Admin>
-{/* <Admin
-        dataProvider={jsonServerProvider(
-            'https://jsonplaceholder.typicode.com'
-        )}
-        authProvider={authProvider}
-        dashboard={Dashboard}
-    >
-        <Resource
-            name="posts"
-            icon={PostIcon}
-            list={PostList}
-            edit={PostEdit}
-            create={PostCreate}
-            show={PostShow}
-        />
-        <Resource name="users" icon={UserIcon} list={UserList} />
-        <Resource name="comments" list={ListGuesser} />
-    </Admin> */}
-
 export default AdminDashboard

@@ -49,5 +49,17 @@
   },
   "devDependencies": {
     "json-server": "^0.16.3"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eformeh/tycoon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eformeh/tycoon/issues"
+  },
+  "homepage": "https://github.com/eformeh/tycoon#readme"
 }
