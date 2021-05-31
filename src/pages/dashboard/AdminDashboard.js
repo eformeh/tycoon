@@ -21,6 +21,22 @@ const AdminDashboard = () => <Admin
         list={UserList}
         edit={UserEdit}
         create={UserCreate} />
+<<<<<<< Updated upstream
     <Resource name="account statement"/>
 </Admin>
+=======
+
+    <Resource name="Account_Statement" show={Account_Statement}>
+        return(
+        <div>
+            <JsonToTable json={Account_Statement} />
+        </div>
+        )
+    </Resource>
+
+
+</Admin>
+
+
+>>>>>>> Stashed changes
 export default AdminDashboard

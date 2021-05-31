@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 "user" : [
 {
     "id": 1,
@@ -35,3 +36,85 @@
     "company":"Facebook",
     "date-of-birth":"03/04/2003"      
 }]
+=======
+{
+  "Account_Statement": {
+    "Statement_Header": {
+      "Account": "0068625600",
+      "Customer_Id": "14308236",
+      "Customer_Name": "PRECISE FINANCIAL SYSTEM",
+      "Currency": "NGN",
+      "Opening_Balance": "510,523,360.81",
+      "Closing_Balance": "2, 214,872,058.49"
+    },
+    "Statement": [
+      {
+        "CUSTOM_HEADER": "CUSTOM",
+        "Booking_Date": "23 APR 21",
+        "Reference": "FT19296BM0YC",
+        "Description": "Transfer In",
+        "Value_Date": "23 APR 21",
+        "DebitCreditIndicator": "D",
+        "Debit": " ",
+        "Credit": "100,000.00",
+        "Closing_Balance": "50,524,360.81"
+      },
+      {
+        "CUSTOM_HEADER": "CUSTOM",
+        "Booking_Date": "23 OCT 19",
+        "Reference": "FT20212021BM0YC",
+        "Description": "Transfer Out- OLADIRAN SUNDAY O",
+        "Value_Date": "28 APR 21",
+        "DebitCreditIndicator": "1",
+        "Debit": "168,000.00",
+        "Credit": " ",
+        "Closing_Balance": "2,760,450.81"
+      },
+      {
+        "CUSTOM_HEADER": "MICHAEL PETERS",
+        "Booking_Date": "28 APR 21",
+        "Reference": "FT2021342BM0YC",
+        "Description": "Transfer Party",
+        "Value_Date": "28 APR 21",
+        "DebitCreditIndicator": "D",
+        "Debit": "120, 345.90",
+        "Credit": "12,000.00",
+        "Closing_Balance": "251,524,360.81"
+      },
+      {
+        "CUSTOM_HEADER": "CUSTOM",
+        "Booking_Date": "23 NOV 20",
+        "Reference": "FT19296BM0YC",
+        "Description": "Transfer In",
+        "Value_Date": "21 APR 20",
+        "DebitCreditIndicator": "2",
+        "Debit": " ",
+        "Credit": "1,000.00",
+        "Closing_Balance": "51,524,360.81"
+      },
+      {
+        "CUSTOM_HEADER": "CUSTOM",
+        "Booking_Date": "23 OCT 19",
+        "Reference": "FT234521BM0YC",
+        "Description": "Transfer In",
+        "Value_Date": "27 APR 21",
+        "DebitCreditIndicator": "D",
+        "Debit": " ",
+        "Credit": "101,000.00",
+        "Closing_Balance": "501,524,360.81"
+      },
+      {
+        "CUSTOM_HEADER": "CUSTOM",
+        "Booking_Date": "28 APR 21",
+        "Reference": "FT212127BM0YC",
+        "Description": "Transfer In",
+        "Value_Date": "25 APR 21",
+        "DebitCreditIndicator": "D",
+        "Debit": " ",
+        "Credit": "145,000.00",
+        "Closing_Balance": "501,524,360.81"
+      }
+    ]
+  }
+}
+>>>>>>> Stashed changes
